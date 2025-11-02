@@ -121,7 +121,7 @@ const KankoryarWebsite = () => {
             text: 'کانکوریار به من کمک کرد تا با اعتماد به نفس در امتحان کانکور شرکت کنم. مواد آموزشی عالی و آزمون‌های مفید بودند.'
           },
           {
-            name: 'فاطمه حسینی',
+            name: ' حسینی',
             role: 'دانشجوی مهندسی',
             text: 'با استفاده از کانکوریار توانستم پیشرفت خود را ردیابی کنم و نقاط ضعفم را بهبود بخشم. بسیار توصیه می‌کنم!'
           },
@@ -313,13 +313,25 @@ const KankoryarWebsite = () => {
   const t = content[language];
   const isRTL = language === 'dari' || language === 'pashto';
 
+  // const handleDownload = () => {
+  //   // Replace with your actual APK download link
+  //   const downloadUrl = 'https://www.mediafire.com/file/lycwmu62tjm45f4/base.apk/file';
+  //   window.location.href = downloadUrl;
+  //   // For demo purposes, show alert
+  //   alert(language === 'dari' ? 'دانلود شروع می‌شود...' : 'ډاونلوډ پیل کیږي...');
+  // };
   const handleDownload = () => {
-    // Replace with your actual APK download link
-    const downloadUrl = 'https://www.mediafire.com/file/lycwmu62tjm45f4/base.apk/file';
-    window.location.href = downloadUrl;
-    // For demo purposes, show alert
-    alert(language === 'dari' ? 'دانلود شروع می‌شود...' : 'ډاونلوډ پیل کیږي...');
-  };
+  const downloadUrl = 'https://github.com/Hikmat97/kankoryarweb/releases/download/V1.0.0/kankoryarv1.0.0.apk';
+  const link = document.createElement('a');
+  link.href = downloadUrl;
+  link.download = 'Kankoryar.apk';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  alert(language === 'dari' ? 'دانلود شروع می‌شود...' : 'ډاونلوډ پیل کیږي...');
+};
+
+
 
   const Page = ({ children }) => (
     <div className={`min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 ${isRTL ? 'rtl' : 'ltr'}`}>
@@ -338,6 +350,7 @@ const KankoryarWebsite = () => {
     alt="Target Icon"
     className="w-12 h-12"
   />
+  
 </div>
 
             <div className={isRTL ? 'text-right' : 'text-left'}>
@@ -520,7 +533,7 @@ const KankoryarWebsite = () => {
                     </div>
                     <div>
                       <div className="font-bold text-gray-900">{testimonial.name}</div>
-                      <div className="text-sm text-gray-600">{testimonial.role}</div>
+                      {/* <div className="text-sm text-gray-600">{testimonial.role}</div> */}
                     </div>
                   </div>
                 </div>
