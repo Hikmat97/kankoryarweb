@@ -321,7 +321,7 @@ const KankoryarWebsite = () => {
   //   alert(language === 'dari' ? 'دانلود شروع می‌شود...' : 'ډاونلوډ پیل کیږي...');
   // };
   const handleDownload = () => {
-  const downloadUrl = 'https://github.com/Hikmat97/kankoryarweb/releases/download/V1.0.0/kankoryarv1.0.0.apk';
+  const downloadUrl = 'https://github.com/Hikmat97/kankoryarweb/releases/download/V1.0.1/1.0.1.apk';
   const link = document.createElement('a');
   link.href = downloadUrl;
   link.download = 'Kankoryar.apk';
